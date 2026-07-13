@@ -1,0 +1,36 @@
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 32px 64px;
+  min-height: calc(100vh - 64px);
+}
+
+.error-message {
+  background-color: rgba(229, 9, 20, 0.15);
+  border: 1px solid #e50914;
+  color: #ff6b6b;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.loading {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #b3b3b3;
+  padding: 64px 0;
+}
+
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 24px;
+}
+
+@media (max-width: 600px) {
+  .movies-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 16px;
+  }
+}
