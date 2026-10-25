@@ -1,12 +1,18 @@
 import "../css/MovieCard.css";
+import type { MouseEvent } from "react";
 import { useMovieContext } from "../contexts/MovieContext";
+import type { Movie } from "../services/api";
 
-function MovieCard({ movie }) {
+interface MovieCardProps {
+  movie: Movie;
+}
+
+function MovieCard({ movie }: MovieCardProps) {
   const { isFavorite, addToFavorites, removeFromFavorites } =
     useMovieContext();
   const favorite = isFavorite(movie.id);
 
-  function onFavoriteClick(e) {
+  function onFavoriteClick(e: MouseEvent<HTMLButtonElement>) {
     e.preventDefault();
     e.stopPropagation();
     if (favorite) {
