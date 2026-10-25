@@ -1,16 +1,94 @@
-# React + Vite
+# 🎬 Movie App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React + TypeScript app for browsing popular movies, searching titles, and saving your favorites, powered by the TMDB API.
 
-Currently, two official plugins are available:
+## Screenshots
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### Home
 
-## React Compiler
+![Home](./screenshot.png)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Favorites
 
-## Expanding the ESLint configuration
+![Favorites](./favorites.png)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Features
+
+- **Popular movies**: the home page loads the current popular movies from TMDB
+- **Search**: find any movie by title
+- **Favorites**: add or remove a movie with the ♥ button on its poster
+- **Saved between visits**: favorites are stored in `localStorage`, so they're still there after a reload
+- **Favorites page**: all your saved movies in one place, with a message when the list is empty
+- **Movie cards**: poster, title, and release year
+- **Loading and error states** while fetching data
+
+## Tech Stack
+
+- [React 19](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vite.dev/)
+- [React Router](https://reactrouter.com/)
+- [TMDB API](https://developer.themoviedb.org/)
+- React Context API for favorites state
+
+## Project Structure
+
+```
+src/
+├── components/   # MovieCard, NavBar
+├── contexts/     # MovieContext (favorites state)
+├── css/          # Styles for each page and component
+├── pages/        # Home, Favorites
+├── services/     # api.ts (TMDB requests)
+├── App.tsx       # Routes
+└── main.tsx      # Entry point
+```
+
+## Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) installed
+- A free TMDB API key from [themoviedb.org](https://www.themoviedb.org/settings/api)
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/MohamadKrayyem/movie-app.git
+   cd movie-app
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Create a `.env` file in the project root (copy `.env.example`) and add your TMDB API key:
+
+   ```env
+   VITE_API_KEY=your_tmdb_api_key
+   ```
+
+4. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+5. Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+## Scripts
+
+| Command           | Description                       |
+| ----------------- | --------------------------------- |
+| `npm run dev`     | Start the development server      |
+| `npm run build`   | Type-check and build for production |
+| `npm run preview` | Preview the production build      |
+| `npm run lint`    | Run ESLint                        |
+
+## Author
+
+**Mohamad Krayyem**: [github.com/MohamadKrayyem](https://github.com/MohamadKrayyem)
